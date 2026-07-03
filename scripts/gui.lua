@@ -96,8 +96,8 @@ function create_gui(player, entity)
     type="checkbox",
     name="enabled_check",
     style="checkbox",
-    caption={"gui-control-behavior-modes.enable-disable"},
-    tooltip = {"gui-control-behavior-modes.enable-disable-description"},
+    caption={"gui-control-behavior-modes.enable-if"},
+    tooltip = {"gui-control-behavior-modes.enable-if-description"},
     tags = { rac=true },
     state = false,
   }

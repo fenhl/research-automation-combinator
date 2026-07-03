@@ -98,9 +98,11 @@ end
 local function init_sci_tiers()
   sci_tiers = {}
   local i = 0
-  for name, tool in pairs(data.raw.tool) do
-    i = i + 1
-    sci_tiers[name] = i
+  for name, item in pairs(data.raw.item) do
+    if item.subgroup == "science-pack" then
+      i = i + 1
+      sci_tiers[name] = i
+    end
   end
 end
 
@@ -118,9 +120,11 @@ end
 --- Creates all subgroups (called during data-updates)
 local function init_all_subgroups()
   local i = 0
-  for name, tool in pairs(data.raw.tool) do
-    i = i + 1
-    subgroup(string.format("%03d", i))
+  for name, item in pairs(data.raw.item) do
+    if item.subgroup == "science-pack" then
+      i = i + 1
+      subgroup(string.format("%03d", i))
+    end
   end
   -- Add fallback subgroups at the start and end
   subgroup("000")
@@ -130,10 +134,12 @@ end
 --- Adds missing subgroups if they don't already exist (called during data-final-fixes)
 local function init_missing_subgroups()
   -- Check which science pack subgroups are missing
-  for name, tool in pairs(data.raw.tool) do
-    local subgroup_name = "rac-technology-" .. string.format("%03d", sci_tiers[name] or 0)
-    if not data.raw["item-subgroup"][subgroup_name] then
-      subgroup(string.format("%03d", sci_tiers[name] or 0))
+  for name, item in pairs(data.raw.item) do
+    if item.subgroup == "science-pack" then
+      local subgroup_name = "rac-technology-" .. string.format("%03d", sci_tiers[name] or 0)
+      if not data.raw["item-subgroup"][subgroup_name] then
+        subgroup(string.format("%03d", sci_tiers[name] or 0))
+      end
     end
   end
 
