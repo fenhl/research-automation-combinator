@@ -1232,7 +1232,7 @@ function ResearchAutomationCombinator:on_research_change(event)
               name = signal_name,
               quality = "normal",
             },
-            constant = 1,
+            constant = tech.level,
             copy_count_from_input = false,
           }
           cb.add_output(output, i)
