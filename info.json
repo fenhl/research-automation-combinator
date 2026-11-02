@@ -1,8 +1,8 @@
 {
-  "name": "research-automation-combinator",
-  "version": "1.1.0",
-  "title": "Research Automation Combinator",
-  "author": "nightingale",
+  "name": "research-automation-combinator-fenhl",
+  "version": "1.1.1",
+  "title": "Research Automation Combinator (Fenhl's fork)",
+  "author": "nightingale, Fenhl",
   "description": "An advanced combinator that can modify the research queue and output research-related signals based on input signals.",
   "factorio_version": "2.1",
   "dependencies": ["base >= 2.1.9", "?space-age"],
