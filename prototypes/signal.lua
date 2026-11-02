@@ -12,7 +12,7 @@ local tech_unlocks = {}
 --- @return data.IconData iconData The icon data for the digit.
 local function signal_digit_icon(digit)
   return {
-    icon = "__research-automation-combinator__/graphics/icons/" .. digit .. ".png",
+    icon = "__research-automation-combinator-fenhl__/graphics/icons/" .. digit .. ".png",
     icon_size = 32,
     shift = { 9, -12 },
     scale = 0.5,
